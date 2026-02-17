@@ -25,5 +25,5 @@ gcc \
   *.c \
   -o out/x64/Debug/intermediate/debug.elf
 
-mv out/x64/Debug/intermediate/debug.elf out/x64/Debug/systemd_qemu_client.elf
+mv out/x64/Debug/intermediate/debug.elf out/x64/Debug/linux_bases_test.elf
 ```
