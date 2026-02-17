@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="LICENSE" />
+    <File Path="notes.txt" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="NoCRT-Linux.vcxproj" Id="8b80bcd6-b746-420b-a120-7a99d335cbf1">
+    <Deploy />
+  </Project>
+</Solution>

@@ -1,0 +1,10 @@
+# build and test
+.vs/
+obj/
+out/
+
+# notes
+/notes.txt
+
+# other
+/*.user

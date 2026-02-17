@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8b80bcd6-b746-420b-a120-7a99d335cbf1}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>NoCRT_Linux</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <RemoteRootDir>~/.visual_studio</RemoteRootDir>
+    <UseOfStl />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)out\$(Platform)\$(Configuration)\intermediate\</IntDir>
+    <TargetName>linux_bases_test</TargetName>
+    <TargetExt>.elf</TargetExt>
+    <RemoteIntRelDir>$(RemoteProjectRelDir)/out//$(Platform)/$(Configuration)/intermediate/</RemoteIntRelDir>
+    <RemoteOutRelDir>$(RemoteProjectRelDir)/out//$(Platform)/$(Configuration)/</RemoteOutRelDir>
+    <RemoteCopySourceMethod>sftp</RemoteCopySourceMethod>
+    <RemoteCCompileToolExe>gcc</RemoteCCompileToolExe>
+    <RemoteCppCompileToolExe />
+    <RemoteCompileLocalCopyObjectFiles>
+    </RemoteCompileLocalCopyObjectFiles>
+    <MultiProcNumber />
+    <RemoteLdToolExe>gcc</RemoteLdToolExe>
+    <RemoteLdCommmandTimeout />
+    <CopyAdditionalIncludes />
+    <EnableASAN />
+    <RemoteLinkLocalCopyOutput />
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="aslr.c" />
+    <ClCompile Include="avx2.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="memory_intrinsics.c" />
+    <ClCompile Include="start.c" />
+    <ClCompile Include="other_x86.c" />
+    <ClCompile Include="uint_to_char.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="intrinsics.h" />
+    <ClInclude Include="kernel.h" />
+    <ClInclude Include="simd_types.h" />
+    <ClInclude Include="syscalls.h" />
+    <ClInclude Include="testing.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="utility.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CAdditionalWarning />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CppAdditionalWarning />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <StrictAliasing />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <OmitFramePointers />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PositionIndependentCode />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <ThreadSafeStatics />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <ExceptionHandling />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <RuntimeTypeInfo />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CLanguageStandard />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CppLanguageStandard />
+      <AdditionalOptions>-std=gnu17 -fPIE -Og -ggdb -g3 -gdwarf-5 -mtune=native -march=native -masm=intel -fverbose-asm -save-temps=obj -masm=intel -ffreestanding -nostdlib -nostartfiles -nodefaultlibs -nolibc -Wall -Wextra -Wshadow -Wcast-qual -Wconversion -Wuseless-cast -Wuninitialized -Wduplicated-cond -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wduplicated-branches -fomit-frame-pointer %(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError />
+      <Verbose />
+      <UnrollLoops />
+      <LinkTimeOptimization />
+      <NoCommonBlocks />
+      <RelaxIEEE />
+      <HideInlineMethods />
+      <SymbolsHiddenByDefault />
+      <CompileAs>Default</CompileAs>
+      <AdditionalIncludeDirectories />
+    </ClCompile>
+    <Link>
+      <UnresolvedSymbolReferences />
+    </Link>
+    <Link>
+      <SharedLibrarySearchPath />
+    </Link>
+    <Link>
+      <IgnoreDefaultLibraries />
+    </Link>
+    <Link>
+      <DebuggerSymbolInformation />
+    </Link>
+    <Link>
+      <Relocation />
+    </Link>
+    <Link>
+      <FunctionBinding />
+    </Link>
+    <Link>
+      <NoExecStackRequired />
+      <AdditionalOptions>-static-pie -fuse-ld=lld -ffreestanding -nostdlib -nostartfiles -nodefaultlibs -nolibc -Wl,-z,now -Wl,--entry=Start -Wl,-z,noexecstack -Wl,--no-undefined %(AdditionalOptions)</AdditionalOptions>
+      <ShowProgress />
+      <Version />
+      <VerboseOutput />
+      <Trace />
+      <PrintMap />
+      <OptimizeforMemory />
+      <WholeArchiveBegin />
+      <AdditionalDependencies />
+      <AdditionalLibraryDirectories />
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="start.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="uint_to_char.c">
+      <Filter>source\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="other_x86.c">
+      <Filter>source\testing</Filter>
+    </ClCompile>
+    <ClCompile Include="memory_intrinsics.c">
+      <Filter>source\testing</Filter>
+    </ClCompile>
+    <ClCompile Include="aslr.c">
+      <Filter>source\testing</Filter>
+    </ClCompile>
+    <ClCompile Include="avx2.c">
+      <Filter>source\testing</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{9779490f-0618-49b7-9653-3159243dceae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{3b0da836-8274-466a-bb41-77838f2ed6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\utility">
+      <UniqueIdentifier>{52b00453-b060-4efa-861e-9d7749fe98cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\testing">
+      <UniqueIdentifier>{5aec99cb-662a-4912-b900-525deabce408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\base">
+      <UniqueIdentifier>{2ccec4dd-5e80-462b-8ba0-eac51277c146}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="testing.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="intrinsics.h">
+      <Filter>header\base</Filter>
+    </ClInclude>
+    <ClInclude Include="simd_types.h">
+      <Filter>header\base</Filter>
+    </ClInclude>
+    <ClInclude Include="syscalls.h">
+      <Filter>header\base</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>header\base</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel.h">
+      <Filter>header\base</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
