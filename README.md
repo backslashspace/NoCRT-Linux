@@ -14,8 +14,8 @@ gcc \
   -std=gnu17 \
   -fPIE -static-pie \
   -fverbose-asm -save-temps=obj -masm=intel \
-  -Og -g3 -ggdb -gdwarf-5 -mtune=native -march=native \
   -ffreestanding -nostdlib -nostartfiles -nodefaultlibs -nolibc \
+  -Og -g3 -ggdb -gdwarf-5 -mtune=native -march=native -fomit-frame-pointer \
   -Wall -Wextra -Wshadow -Wcast-qual -Wconversion -Wuseless-cast -Wuninitialized -Wduplicated-cond -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wduplicated-branches \
   -fuse-ld=lld \
   -Wl,-z,now \
@@ -23,7 +23,7 @@ gcc \
   -Wl,-z,noexecstack \
   -Wl,--no-undefined \
   *.c \
-  -o out/x64/Debug/intermediate/debug.elf
+  -o out/x64/Optimized-Debug/intermediate/optimized_debug.elf
 
-mv out/x64/Debug/intermediate/debug.elf out/x64/Debug/linux_bases_test.elf
+mv out/x64/Optimized-Debug/intermediate/optimized_debug.elf out/x64/Optimized-Debug/linux_bases_test.elf
 ```
