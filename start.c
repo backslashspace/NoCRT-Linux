@@ -8,7 +8,7 @@ void Start()
         "lea rdx, [rsp + 16];"
         "lea rdx, [rdx + rdi*8];"
         "call Main;"
-        "movzx rdi, al;"
+        "mov dil, al;"
         "mov rax, 60;"
         "syscall;"
     );

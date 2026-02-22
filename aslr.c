@@ -6,7 +6,7 @@ static uint32_t _globalVariable = 0;
 
 void DebugASLR()
 {
-    write(1, "# ASLR Debug Output:\n", 19);
+    write(1, "# ASLR Debug Output:\n", 21);
 
     uint32_t stackVariable = 67;
 

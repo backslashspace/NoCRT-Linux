@@ -1,10 +1,7 @@
-# build and test
-.vs/
-obj/
-out/
+/.vs/
+/obj/
+/out/
 
-# notes
+
 /notes.txt
-
-# other
-/*.user
+/*.vcxproj.user

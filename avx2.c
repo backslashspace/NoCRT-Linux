@@ -4,7 +4,7 @@
 
 void TestAVX2()
 {
-    write(1, "# AVX2 shuffle feat.:\n", 20);
+    write(1, "# AVX2 shuffle feat.:\n", 22);
     write(1, "vmovntdqa (non temporal load)\n", 30);
     write(1, "vpshufb (shuffle bytes in 128 bit lane)\n", 40);
     write(1, "vperm2i128 (permute across lanes)\n", 34);

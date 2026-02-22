@@ -36,12 +36,12 @@ void TestOtherX86()
     write(1, "String: 0-,+*)('&%$#!}\"\n", 24);
     write(1, "CRC32C: ", 8);
     write(1, crc32cString + (20 - length), length);
+    write(1, "\n", 1);
     if (crc32c != 2011073399)
     {
-        write(1, "CRC Error: unexpected value", 27);
+        write(1, "CRC Error: unexpected value\n", 28);
         exit(1);
     }
-
     write(1, "OK\n\n: ", 4);
 
     /* ------------------------------------------------- */
