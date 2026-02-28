@@ -30,4 +30,4 @@ typedef double double_t;
 
 // ░░░ Scalars ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-typedef void* Handle;
+typedef void *Handle;

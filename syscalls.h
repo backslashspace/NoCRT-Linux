@@ -4,7 +4,7 @@
 // https://man7.org/linux/man-pages/man2/syscall.2.html#DESCRIPTION
 
 __attribute__((always_inline))
-static inline uint64_t syscall0(uint64_t syscallNumber)
+static inline uint64_t syscall0(uint64_t const syscallNumber)
 {
     uint64_t ret = 0;
 
@@ -20,7 +20,7 @@ static inline uint64_t syscall0(uint64_t syscallNumber)
 }
 
 __attribute__((always_inline))
-static inline uint64_t syscall1(uint64_t syscallNumber, uint64_t arg1)
+static inline uint64_t syscall1(uint64_t const syscallNumber, uint64_t const arg1)
 {
     uint64_t ret = 0;
 
@@ -36,7 +36,7 @@ static inline uint64_t syscall1(uint64_t syscallNumber, uint64_t arg1)
 }
 
 __attribute__((always_inline))
-static inline uint64_t syscall2(uint64_t syscallNumber, uint64_t arg1, uint64_t arg2)
+static inline uint64_t syscall2(uint64_t const syscallNumber, uint64_t const arg1, uint64_t const arg2)
 {
     uint64_t ret = 0;
 
@@ -52,7 +52,7 @@ static inline uint64_t syscall2(uint64_t syscallNumber, uint64_t arg1, uint64_t 
 }
 
 __attribute__((always_inline))
-static inline uint64_t syscall3(uint64_t syscallNumber, uint64_t arg1, uint64_t arg2, uint64_t arg3)
+static inline uint64_t syscall3(uint64_t const syscallNumber, uint64_t const arg1, uint64_t const arg2, uint64_t const arg3)
 {
     uint64_t ret = 0;
 
@@ -68,7 +68,7 @@ static inline uint64_t syscall3(uint64_t syscallNumber, uint64_t arg1, uint64_t 
 }
 
 __attribute__((always_inline))
-static inline uint64_t syscall4(uint64_t syscallNumber, uint64_t arg1, uint64_t arg2, uint64_t arg3, uint64_t arg4)
+static inline uint64_t syscall4(uint64_t const syscallNumber, uint64_t const arg1, uint64_t const arg2, uint64_t const arg3, uint64_t const arg4)
 {
     uint64_t ret = 0;
 
@@ -86,7 +86,7 @@ static inline uint64_t syscall4(uint64_t syscallNumber, uint64_t arg1, uint64_t 
 }
 
 __attribute__((always_inline))
-static inline uint64_t syscall5(uint64_t syscallNumber, uint64_t arg1, uint64_t arg2, uint64_t arg3, uint64_t arg4, uint64_t arg5)
+static inline uint64_t syscall5(uint64_t const syscallNumber, uint64_t const arg1, uint64_t const arg2, uint64_t const arg3, uint64_t const arg4, uint64_t const arg5)
 {
     uint64_t ret = 0;
 
@@ -105,7 +105,7 @@ static inline uint64_t syscall5(uint64_t syscallNumber, uint64_t arg1, uint64_t 
 }
 
 __attribute__((always_inline))
-static inline uint64_t syscall6(uint64_t syscallNumber, uint64_t arg1, uint64_t arg2, uint64_t arg3, uint64_t arg4, uint64_t arg5, uint64_t arg6)
+static inline uint64_t syscall6(uint64_t const syscallNumber, uint64_t const arg1, uint64_t const arg2, uint64_t const arg3, uint64_t const arg4, uint64_t const arg5, uint64_t const arg6)
 {
     uint64_t ret = 0;
 

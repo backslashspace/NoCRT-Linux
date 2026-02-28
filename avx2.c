@@ -17,9 +17,9 @@ void TestAVX2()
     write(1, STRING_INVERSE_TEST, 128);
     write(1, "\n", 1);
 
-    uint8x32_t* allignedTestBuffer = (uint8x32_t*)__builtin_alloca_with_align(128, 256);
-    uint8x32_t* allignedMaskBuffer = (uint8x32_t*)__builtin_alloca_with_align(32, 256);
-    uint8x32_t* allignedDestinationBuffer = (uint8x32_t*)__builtin_alloca_with_align(128, 256);
+    uint8x32_t *allignedTestBuffer = (uint8x32_t *)__builtin_alloca_with_align(128, 256);
+    uint8x32_t *allignedMaskBuffer = (uint8x32_t *)__builtin_alloca_with_align(32, 256);
+    uint8x32_t *allignedDestinationBuffer = (uint8x32_t *)__builtin_alloca_with_align(128, 256);
 
     MemoryCopyX86(allignedTestBuffer, STRING_INVERSE_TEST, 128);
     MemoryCopyX86(allignedMaskBuffer, STRING_INVERSE_TEST_MASK, 32);

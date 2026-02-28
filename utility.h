@@ -17,4 +17,4 @@ static inline uint16_t CheckErrno(int64_t code)
 /// <param name="value">Input</param>
 /// <param name="buffer">Buffer of length 20</param>
 /// <returns>Length in visual digits</returns>
-uint16_t UInt64ToChar(uint64_t value, char_t* buffer);
+uint16_t UInt64ToChar(uint64_t value, char_t *const buffer);

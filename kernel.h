@@ -37,44 +37,44 @@ typedef struct TIMESPEC
 
 // https://man7.org/linux/man-pages/man2/exit.2.html
 __attribute__((noreturn))
-static inline void exit(uint8_t status)
+static inline void exit(uint8_t const status)
 {
 	syscall1(60, status);
 	__builtin_unreachable();
 }
 
 // https://manpages.debian.org/unstable/manpages-dev/getrandom.2.en.html
-static inline int64_t getrandom(void* buffer, uint64_t size, uint32_t flags)
+static inline int64_t getrandom(void *const buffer, uint64_t const size, uint32_t const flags)
 {
 	return (int64_t)syscall3(318, (uint64_t)buffer, size, flags);
 }
 
 // https://man7.org/linux/man-pages/man2/mmap.2.html
-static inline int32_t munmap(void* addr, uint64_t length)
+static inline int32_t munmap(void *const addr, uint64_t const length)
 {
 	return (int32_t)syscall2(11, (uint64_t)addr, length);
 }
 
 //__attribute__((malloc, malloc(munmap, 1)))
-static inline void* mmap(void* addr, uint64_t length, uint32_t prot, uint32_t flags, uint32_t fd, uint64_t offset)
+static inline void *mmap(void *const addr, uint64_t const length, uint32_t const prot, uint32_t const flags, uint32_t const fd, uint64_t const offset)
 {
-	return (void*)syscall6(9, (uint64_t)addr, length, prot, flags, fd, offset);
+	return (void *)syscall6(9, (uint64_t)addr, length, prot, flags, fd, offset);
 }
 
 // https://manpages.debian.org/unstable/manpages-dev/write.2.en.html
-static inline int64_t write(uint32_t fd, const void* buf, uint64_t count)
+static inline int64_t write(uint32_t const fd, void const *const buf, uint64_t const count)
 {
 	return (int64_t)syscall3(1, fd, (uint64_t)buf, count);
 }
 
 // https://manpages.debian.org/unstable/manpages-dev/clock_nanosleep.2.en.html
-static inline int64_t clock_nanosleep(uint32_t clockid, uint32_t flags, const TIMESPEC* t, TIMESPEC* remain)
+static inline int64_t clock_nanosleep(uint32_t const clockId, uint32_t flags, TIMESPEC const *const restrict t, TIMESPEC *const restrict remain)
 {
-	return (int64_t)syscall4(230, clockid, flags, (uint64_t)t, (uint64_t)remain);
+	return (int64_t)syscall4(230, clockId, flags, (uint64_t)t, (uint64_t)remain);
 }
 
 // https://manpages.debian.org/unstable/manpages-dev/read.2.en.html
-static inline int64_t read(uint32_t fd, void* buf, uint64_t count)
+static inline int64_t read(uint32_t const fd, void *const buf, uint64_t const count)
 {
 	return (int64_t)syscall3(0, fd, (uint64_t)buf, count);
 }

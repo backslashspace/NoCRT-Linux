@@ -2,19 +2,14 @@
 #include "testing.h"
 #include "intrinsics.h"
 
-void Test()
+//void Test()
+//{
+//    asm("pause");
+//}
+
+uint8_t Main(uint64_t argc, uint8_t **argv, uint8_t **envp)
 {
-    uint64_t test;
-    boolean_t flag = Gurt(&test);
-
-    asm("pause");
-
-    asm("pause" : : "r"(flag), "r"(test));
-}
-
-uint8_t Main(uint64_t argc, uint8_t** argv, uint8_t** envp)
-{
-    Test();
+    //Test();
 
     /* ------------------------------------------------- */
 
@@ -31,6 +26,8 @@ uint8_t Main(uint64_t argc, uint8_t** argv, uint8_t** envp)
     TestAVX2();
 
     TestOtherX86();
+
+    asm volatile("pause" : : "r"(argc), "r"(argv), "r"(envp));
 
     return 67;
 }

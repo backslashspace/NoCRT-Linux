@@ -6,7 +6,7 @@ void MemoryIntrinsics()
 	write(1, "# MemoryIntrinsics:\n", 20);
 
 	static const char_t testString[126] = "Yes I should not get copied into a local buffer every time this function gets called, because of the const in the declaration.";
-	char_t* stackMemory = (char_t*)__builtin_alloca(126);
+	char_t *stackMemory = (char_t *)__builtin_alloca(126);
 
 	/* ------------------------------------------------- */
 
